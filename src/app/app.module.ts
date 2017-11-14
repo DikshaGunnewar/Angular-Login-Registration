@@ -12,11 +12,10 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { AuthService } from "./shared/guard/auth.service";
 import { DataserviceService } from "./services/dataservice.service";
 export function HttpLoaderFactory(http: HttpClient) {
-    // for development
-    return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+ // for development
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 
 }
-
 @NgModule({
   declarations: [
     AppComponent
@@ -25,10 +24,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

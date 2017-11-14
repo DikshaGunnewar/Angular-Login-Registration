@@ -15,5 +15,4 @@ import { DashboardComponent } from "../layout/dashboard/dashboard.component";
     ],
     declarations: [LoginComponent]
 })
-export class LoginModule {
-}
+export class LoginModule {}

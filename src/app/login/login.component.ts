@@ -37,7 +37,7 @@ get password(){
 return this.myform.get("password");
 
 }
-// ***********************************************************************************************************************
+// ****************************************************************************************************************************
 //Login method
  public loading:boolean = false;
  error = '';
@@ -58,10 +58,8 @@ ngOnInit(){
                     this.loading = true;
                    // this.router.navigate(['app/layout/dashboard']);
                     this.router.navigate(['/']);
-                    console.log(result);
-                    
-                    // this.router.navigate(['./dashboard']);
-                    
+                    console.log(result);            
+                    // this.router.navigate(['./dashboard']);            
                 } else {
                     // login failed
                     this.error = 'Username or password is incorrect';

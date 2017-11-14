@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
     ngOnInit() {}
 // ********************************************************************************************************************
     //Validation using Reactive Form
-    myform = this.fb.group({
+   myform = this.fb.group({
         //Email valildation
         Email: new FormControl('', [Validators.required, Validators.pattern("[a-zA-Z]+[a-zA-Z0-9]*[^ @]*@[^ @]*[a-zA-Z]*[\.][a-zA-Z]+[a-zA-Z]+")]),
         //password valildation     
@@ -29,7 +29,6 @@ export class SignupComponent implements OnInit {
         ]),
         //Password Confirmation         
         ConfirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)])
-
     },
         //validating password and confirm password field
         { validator: this.checkIfMatchingPasswords('Password', 'ConfirmPassword') }
@@ -70,18 +69,16 @@ export class SignupComponent implements OnInit {
 // ************************************************************************************************************************
  //Form method for Registing User
     element: any;
-    onRegister(myform: NgForm) {
+    onRegister() {
         debugger;
-        this.element = myform.value;
-        console.log(this.element);
-        this.service.onRegister(this.element)
+       // this.element = myform.value;
+        //console.log(this.element);
+        this.service.onRegister(this.myform.value)
             .subscribe(
             newPost => {
-                this.element = newPost;
+                this.myform = newPost;
                 console.log(newPost);
-
+                this.router.navigate(['./login']);
             });
     }
-
-
 }
